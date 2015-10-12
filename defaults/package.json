@@ -1,0 +1,31 @@
+{
+  "name": "your-app",
+  "version": "0.0.1",
+  "description": "",
+  "author": [
+    {
+      "name": "your_name",
+      "email": "someone@somedomain.com"
+    }
+  ],
+  "keywords": [
+  ],
+  "main": "server.js",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "gulp": "^3.9.0",
+    "istanbul": "^0.3.0",
+    "jshint": "^2.5.5",
+    "mocha": "^1.21.4"
+  },
+  "scripts": {
+    "pretest": "jshint  ./lib/*.js",
+    "test": "mocha tests/*.js  && istanbul cover $(which _mocha) -- tests/*.js",
+    "lint": "jshint ./lib/*.js"
+  }
+}
