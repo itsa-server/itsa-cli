@@ -2,11 +2,19 @@
 
 'use strict';
 
-var fs = require('fs'),
-    copyDir = require('copy-dir'),
-    DEFAULTS_DIR = '/usr/local/lib/node_modules/itsa-cli/defaults/';
+var fs = require('fs-extra'),
+    DEFAULTS_DIR = '/usr/local/lib/node_modules/itsa-cli/defaults/',
+    files, createApp, findHiddenFiles;
 
-var createApp = dirName => {
+// we couldn't find a module that copied hidden files well. Thus hidden files are kept with leading underscore
+// and made hidden when copied
+findHiddenFiles = filename => {
+    var remaining = filename.substr(1),
+        firstCharacter = (filename[0]==='_') ? '.' : filename[0];
+    return firstCharacter + remaining;
+};
+
+createApp = dirName => {
     try {
         fs.accessSync(dirName);
         // if this succeeds, then dirname exists and we should break
@@ -17,13 +25,9 @@ var createApp = dirName => {
 
     // now we can create the app-directory with default content
     try {
-        copyDir.sync(DEFAULTS_DIR, './'+dirName);
-        // fs.mkdirSync(dirName);
-        // wrench.copyDirSyncRecursive(DEFAULTS_DIR, './'+dirName, {
-        //     excludeHiddenUnix: false
-        // });
-        // files = fs.readdirSync(DEFAULTS_DIR);
-        // files.forEach(file => fs.copySync(DEFAULTS_DIR+file, './'+dirName+'/'+   file   ));
+        fs.mkdirSync(dirName);
+        files = fs.readdirSync(DEFAULTS_DIR);
+        files.forEach(file => fs.copySync(DEFAULTS_DIR+file, './'+dirName+'/'+findHiddenFiles(file)));
     }
     catch(err) {
         console.log(err);
