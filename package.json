@@ -31,7 +31,7 @@
     "node": "*"
   },
   "dependencies": {
-    "copy-dir": "0.0.7"
+    "fs-extra": "^0.24.0"
   },
   "devDependencies": {
     "chai": "^1.9.1",
