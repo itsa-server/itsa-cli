@@ -2,9 +2,12 @@
 
 'use strict';
 
-var fs = require('fs-extra'),
+var fs = require('fs'),
+    wrench = require('wrench'),
     DEFAULTS_DIR = '/usr/local/lib/node_modules/itsa-cli/defaults/',
     files;
+
+transformHiddenFile
 
 var createApp = dirName => {
     try {
@@ -18,8 +21,11 @@ var createApp = dirName => {
     // now we can create the app-directory with default content
     try {
         fs.mkdirSync(dirName);
-        files = fs.readdirSync(DEFAULTS_DIR);
-        files.forEach(file => fs.copySync(DEFAULTS_DIR+file, './'+dirName+'/'+file));
+        wrench.copyDirSyncRecursive(DEFAULTS_DIR, './'+dirName, {
+            excludeHiddenUnix: false
+        });
+        // files = fs.readdirSync(DEFAULTS_DIR);
+        // files.forEach(file => fs.copySync(DEFAULTS_DIR+file, './'+dirName+'/'+   file   ));
     }
     catch(err) {
         console.log(err);
