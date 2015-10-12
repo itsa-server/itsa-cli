@@ -19,10 +19,7 @@ var createApp = dirName => {
     try {
         fs.mkdirSync(dirName);
         files = fs.readdirSync(DEFAULTS_DIR);
-        // files.forEach(file => fs.copySync(DEFAULTS_DIR+'file', './'+dirName+'/'+file));
-        files.forEach(file => {
-            console.log(DEFAULTS_DIR+'file --> ./'+dirName+'/'+file);
-        });
+        files.forEach(file => fs.copySync(DEFAULTS_DIR+file, './'+dirName+'/'+file));
     }
     catch(err) {
         console.log(err);
