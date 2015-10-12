@@ -10,13 +10,13 @@ var args = process.argv,
 
 if (action==='create') {
     subaction = args[3];
-    if (subaction && subaction.test(validApp)) {
+    if (subaction && validApp.test(subaction)) {
         createApp();
     }
     else {
-        console.log('invalid command');
+        console.log('itsacli --> invalid arguments');
     }
 }
 else {
-    console.log('invalid command');
+    console.log('itsacli --> invalid arguments');
 }
