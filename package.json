@@ -31,7 +31,7 @@
     "node": "*"
   },
   "dependencies": {
-    "fs-extra": "^0.24.0"
+    "wrench": "^1.5.8"
   },
   "devDependencies": {
     "chai": "^1.9.1",
