@@ -18,7 +18,7 @@ var createApp = dirName => {
     // now we can create the app-directory with default content
     try {
         fs.mkdirSync(dirName);
-        files = fs.readdirSync(dirName);
+        files = fs.readdirSync(DEFAULTS_DIR);
         // files.forEach(file => fs.copySync(DEFAULTS_DIR+'file', './'+dirName+'/'+file));
         files.forEach(file => {
             console.log(DEFAULTS_DIR+'file --> ./'+dirName+'/'+file);
