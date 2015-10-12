@@ -3,11 +3,8 @@
 'use strict';
 
 var fs = require('fs'),
-    wrench = require('wrench'),
-    DEFAULTS_DIR = '/usr/local/lib/node_modules/itsa-cli/defaults/',
-    files;
-
-transformHiddenFile
+    copyDir = require('copy-dir'),
+    DEFAULTS_DIR = '/usr/local/lib/node_modules/itsa-cli/defaults/';
 
 var createApp = dirName => {
     try {
@@ -20,10 +17,11 @@ var createApp = dirName => {
 
     // now we can create the app-directory with default content
     try {
-        fs.mkdirSync(dirName);
-        wrench.copyDirSyncRecursive(DEFAULTS_DIR, './'+dirName, {
-            excludeHiddenUnix: false
-        });
+        copyDir.sync(DEFAULTS_DIR, './'+dirName);
+        // fs.mkdirSync(dirName);
+        // wrench.copyDirSyncRecursive(DEFAULTS_DIR, './'+dirName, {
+        //     excludeHiddenUnix: false
+        // });
         // files = fs.readdirSync(DEFAULTS_DIR);
         // files.forEach(file => fs.copySync(DEFAULTS_DIR+file, './'+dirName+'/'+   file   ));
     }

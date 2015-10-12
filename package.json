@@ -31,7 +31,7 @@
     "node": "*"
   },
   "dependencies": {
-    "wrench": "^1.5.8"
+    "copy-dir": "0.0.7"
   },
   "devDependencies": {
     "chai": "^1.9.1",
