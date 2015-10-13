@@ -1,6 +1,12 @@
 # itsa-cli
 Command line interface for itsa-server
 
+Install Gulp globally:
+
+```
+npm install -g gulp
+```
+
 If you want linting in your project, you need to install es-lint globally:
 
 ```
