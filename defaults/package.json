@@ -20,7 +20,7 @@
     "itsa-react-server": "^1.0.0",
     "itsa-react-router": "^1.0.0",
     "itsa-react-fs-markdown": "^1.0.0",
-    "itsa-react-router": "^1.0.0",
+    "itsa-client-controller": "^1.0.0",
     "itsa-reflux-clientstorage": "^1.0.0",
     "react": "^0.13.3",
     "reflux": "^0.3.0",
