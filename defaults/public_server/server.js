@@ -7,7 +7,7 @@ process.chdir(__dirname);
 const Hapi = require('hapi'),
       Vision = require('vision'),
       Inert = require('inert'),
-      reactServer = require('itsa-hapi-react-server'),
+      reactServer = require('itsa-react-server'),
       packageJson = require('./package.json'),
       reactServerConfig = require('./versions/'+packageJson.version+'/reactserver.config.json'),
       ReactServerPlugin = {
