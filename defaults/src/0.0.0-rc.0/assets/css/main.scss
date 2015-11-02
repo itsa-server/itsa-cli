@@ -1,0 +1,14 @@
+$font-color: #900;
+
+body {
+    font-size: 120%;
+    /*
+     set the font-family equal to pure-grid
+    */
+    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+    color: $font-color;
+}

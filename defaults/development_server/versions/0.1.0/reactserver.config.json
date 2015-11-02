@@ -1,0 +1,52 @@
+{
+    "port": 4001,
+    "url-loader-limit": "4",
+    "debug": false,
+    "inlinecss": true,
+    "page-description": "my awesome page",
+    "google-analytics": "",
+    "sessiontime": 10,
+    "meta-viewport": {
+        "desktop": "width=device-width, initial-scale=1.0",
+        "phone": "user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui",
+        "tablet": "user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui"
+    },
+    "languages": {
+        "en": "default",
+        "nl": true,
+        "de": false,
+        "fr": false
+    },
+    "databases": {
+        "db1": {
+            "database": "db1",
+            "user": "my_username",
+            "password": "my_password"
+        }
+    },
+    "environments": {
+        "development": {
+            "devserver": true,
+            "port": 5001,
+            "url-loader-limit": "0",
+            "debug": false,
+            "inlinecss": false
+        },
+        "phone": {
+            "devserver": true,
+            "port": 5001,
+            "url-loader-limit": "0",
+            "debug": false,
+            "inlinecss": false,
+            "device": "phone"
+        },
+        "tablet": {
+            "devserver": true,
+            "port": 5001,
+            "url-loader-limit": "0",
+            "debug": false,
+            "inlinecss": false,
+            "device": "tablet"
+        }
+    }
+}

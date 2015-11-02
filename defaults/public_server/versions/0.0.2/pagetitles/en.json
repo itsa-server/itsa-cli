@@ -1,0 +1,13 @@
+{
+    "index": "Itsa react-server",
+    "configuration": "Configuration webapplication",
+    "developing": "Build a developing-environment",
+    "environments": "Different environments",
+    "gulp": "Gulp commands",
+    "i18n": "Internationalization",
+    "installation": "Installation",
+    "models": "Models",
+    "pages": "Web-pages",
+    "production": "Build a production-environment",
+    "router": "Router"
+}

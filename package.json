@@ -1,6 +1,6 @@
 {
   "name": "itsa-cli",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Command line interface for itsa-server",
   "bin": {
     "itsa": "./bin/itsa.js"
@@ -26,7 +26,6 @@
     "itsa-server",
     "server"
   ],
-  "main": "xxxxxxxx",
   "engines": {
     "node": "*"
   },
