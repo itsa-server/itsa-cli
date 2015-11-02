@@ -30,7 +30,7 @@ itsa create appname
 
 `appname` will become a new folder with all approriate files.
 
-# Step 2: npm install
+### Step 2: npm install
 
 Goto the created folder and run:
 
