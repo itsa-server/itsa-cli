@@ -12,10 +12,7 @@
         "tablet": "user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui"
     },
     "languages": {
-        "en": "default",
-        "nl": true,
-        "de": false,
-        "fr": false
+        "en": "default"
     },
     "databases": {
         "db1": {
