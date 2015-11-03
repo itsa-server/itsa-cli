@@ -6,7 +6,7 @@ var fs = require('fs-extra'),
     DEFAULTS_DIR = '/usr/local/lib/node_modules/itsa-cli/defaults',
     createApp;
 
-createApp = dirName => {
+createApp = function(dirName) {
     try {
         fs.accessSync(dirName);
         // if this succeeds, then dirname exists and we should break

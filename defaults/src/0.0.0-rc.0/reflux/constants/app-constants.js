@@ -1,6 +1,6 @@
 'use strict';
 
-const CONSTANTS = {
+var CONSTANTS = {
     TOGGLE_MENU: 'toggleMenu'
 };
 

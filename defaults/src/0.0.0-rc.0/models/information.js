@@ -1,13 +1,13 @@
 'use strict';
 
-const fsMD = require('itsa-react-fs-markdown')(__dirname); //<-- de huidige map moet worden doorgegeven als argument
+var fsMD = require('itsa-react-fs-markdown')(__dirname); //<-- de huidige map moet worden doorgegeven als argument
 
-const model = (options, language) => {
+var model = function(options, language) {
     // this === request
-    const langfile = require('../languages/'+language+'.json'); // synchronous
-    const pagecontentPromise = fsMD.readFile('../markdowns/'+language+'/information.MD'); // asynchronous
+    var langfile = require('../languages/'+language+'.json'), // synchronous
+        pagecontentPromise = fsMD.readFile('../markdowns/'+language+'/information.MD'); // asynchronous
 
-    return pagecontentPromise.then(response => {
+    return pagecontentPromise.then(function(response) {
         // modellen moeten een object retourneren
         // in dit geval krijgt de view toegang tot this.props.pagecontent
         // de response ziet er uit als: {__html: ''}

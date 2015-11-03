@@ -1,10 +1,10 @@
 'use strict';
 
-const routes = [
+var routes = [
     {
         method: 'GET',
         path: '/',
-        handler(request, reply) {
+        handler: function(request, reply) {
             reply.reactview('index');
         }
     },
@@ -12,7 +12,7 @@ const routes = [
     {
         method: 'GET',
         path: '/information',
-        handler(request, reply) {
+        handler: function(request, reply) {
             reply.reactview('information');
         }
     }

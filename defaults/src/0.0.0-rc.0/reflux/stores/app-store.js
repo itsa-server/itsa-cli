@@ -1,23 +1,22 @@
 'use strict';
 
-let menuActivated;
+var Reflux = require('reflux'),
+    actions = require('../actions/app-actions'),
+    ItsaRefluxClientStorage = require('itsa-reflux-clientstorage'),
+    menuActivated, store;
 
-const Reflux = require('reflux'),
-      actions = require('../actions/app-actions'),
-      ItsaRefluxClientStorage = require('itsa-reflux-clientstorage');
-
-const store = Reflux.createStore({
+store = Reflux.createStore({
     mixins: [ItsaRefluxClientStorage],
 
     listenables: [actions],
 
-    onToggleMenu() {
+    onToggleMenu: function() {
         menuActivated = !menuActivated;
         this.trigger({menuActivated: menuActivated});
     },
 
-    getInitialState() {
-        let initialSate = {
+    getInitialState: function() {
+        var initialSate = {
                 menuActivated: false
             },
             state = this.readStateFromClientStorage(initialSate);
