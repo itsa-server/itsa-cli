@@ -1,2 +1,2 @@
-const ItsaRouterClass = require('itsa-react-router');
+var ItsaRouterClass = require('itsa-react-router');
 new ItsaRouterClass();

@@ -1,11 +1,11 @@
 'use strict';
 
-const React = require('react'),
+var React = require('react'),
       TransferedProperties = require('../../lib/transfered-properties');
 
-const Page = React.createClass({
-    render() {
-        let commonscript = this.props.__itsacommonscript && <script src={this.props.__itsacommonscript} />,
+var Page = React.createClass({
+    render: function() {
+        var commonscript = this.props.__itsacommonscript && <script src={this.props.__itsacommonscript} />,
             pagescript = this.props.__itsapagescript && <script src={this.props.__itsapagescript} />,
             googleAnalyticsInit, gaInit, ga, pagecss, stringifiedProps, gaInitScript, googleAnalyticsGa;
 
@@ -21,7 +21,10 @@ const Page = React.createClass({
         }
 
         if (this.props.__itsapagelinkcss) {
-            pagecss = this.props.__itsapageinlinecss ? <style data-src="inline" type="text/css">{this.props.__itsapageinlinecss}</style> : <link data-src="inline" rel="stylesheet" href={this.props.__itsapagelinkcss} />;
+            pagecss = <link data-src="inline" rel="stylesheet" href={this.props.__itsapagelinkcss} />;
+        }
+        else if (this.props.__itsapageinlinecss) {
+            pagecss = <style data-src="inline" type="text/css" dangerouslySetInnerHTML={this.props.__itsapageinlinecss} />;
         }
 
         stringifiedProps = JSON.stringify(this.props);

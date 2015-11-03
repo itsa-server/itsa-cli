@@ -1,9 +1,9 @@
 require('../assets/css/main.scss');
 
-const React = require('react');
+var React = require('react');
 
-const Body = React.createClass({
-    render() {
+var Body = React.createClass({
+    render: function() {
         return (
             <h1>Hello world!</h1>
         );

@@ -1,13 +1,13 @@
 require('../assets/css/purecss/buttons.css');
 require('../assets/css/main.scss');
 
-const React = require('react'),
-      Reflux = require('reflux'),
-      store = require('../reflux/stores/app-store');
+var React = require('react'),
+    Reflux = require('reflux'),
+    store = require('../reflux/stores/app-store');
 
-const Body = React.createClass({
+var Body = React.createClass({
     mixins: [Reflux.connect(store)],
-    render() {
+    render: function() {
         return (
             <div>
                 <h1>{this.props.hello}</h1>
