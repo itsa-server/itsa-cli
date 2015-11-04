@@ -1,1 +1,0 @@
-Asynchrone Modellen (gegevens voor de views)

@@ -17,7 +17,7 @@ gulp.task('component:createserverversion', () => {
             base: SRC_DIR+previousRelease
         }).pipe(gulp.dest(SRC_DIR+freeRelease));
 
-        return gulp.src([SRC_DIR+previousRelease+'/**/*', '!'+SRC_DIR+previousRelease+'/{app.js,views,views/**,assets/css,assets/css/**}'], {
+        return gulp.src([SRC_DIR+previousRelease+'/**/*', '!'+SRC_DIR+previousRelease+'/{app.js,views,views/**,pageapps,pageapps/**,assets/css,assets/css/**}'], {
             base: SRC_DIR+previousRelease
         }).pipe(gulp.dest(SRC_DIR+freeRelease))
           .pipe(gulp.dest(SERVER_DIR+'versions/'+freeRelease));

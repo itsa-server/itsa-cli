@@ -21,7 +21,7 @@ gulp.task('component:createdevversion', () => {
 
         fs.copySync(SRC_DIR+previousRelease+'/reactserver.config.json', DEVELOPMENT_DIR+'versions/'+freeRelease+'/reactserver.config.json');
 
-        return gulp.src([SRC_DIR+previousRelease+'/**/*', '!'+SRC_DIR+previousRelease+'/{app.js,views,views/**,assets/css,assets/css/**}'], {
+        return gulp.src([SRC_DIR+previousRelease+'/**/*', '!'+SRC_DIR+previousRelease+'/{app.js,views,views/**,pageapps,pageapps/**,assets/css,assets/css/**}'], {
             base: SRC_DIR+previousRelease
         }).pipe(gulp.dest(DEVELOPMENT_DIR+'versions/'+freeRelease));
 

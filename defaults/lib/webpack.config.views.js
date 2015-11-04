@@ -20,17 +20,21 @@ const configFn = production => {
         new ExtractTextPlugin(cssFilename, {allChunks: false})
     ];
     const path = (production ? './public_server' : './development_server') +'/versions/'+version.nextProdVersion+'/assets/';
-
     if (production) {
         plugins = plugins.concat([
             new webpack.optimize.UglifyJsPlugin({
+                beautify: {
+                    ascii_only: true,
+                    beautify: false
+                },
                 compress: {
-                  warnings: false
+                    drop_debugger: true,
+                    drop_console: true,
+                    warnings: false
                 },
                 output: {
-                  comments: false
-                },
-                sourceMap: false
+                    comments: false
+                }
             })
         ]);
     }
