@@ -8,6 +8,7 @@ const webpack = require('webpack'),
       appComponentBuilder = require('./app-component-builder'),
       viewComponentBuilder = require('./view-component-builder'),
       REGEXP_CONST_ITSA_VIEW_EXTRACT = /webpackJsonp(?:\D+)(\d+)(?:(?!A).)*(?:Array\((\d+))?(?:(?:.|\n|\r)*)(__itsa_view__(?:\w|@)+)/,
+      REGEXP_CONST_NR = /(\d+):/,
       SYSTEM_FILES = {
           'app.js': true,
           'routes.js': true,
@@ -56,7 +57,7 @@ const mergeApp = (dir) => {
 
 const createBuildStats = (dir) => {
     let content = '[',
-        match, fileWithoutExt, fileContent, splittedItems, requireId;
+        match, fileWithoutExt, fileContent, splittedItems, requireId, matchNumber;
     const destFile = Path.join(dir,'../build-stats.json'),
           componentsDir = dir+'js/components/',
           files = fs.readdirSync(componentsDir);
@@ -70,9 +71,17 @@ const createBuildStats = (dir) => {
             }
             requireId = match[2];
             if (requireId===undefined) {
-                // not delivered by "Array()" --> we need to coun the number of comma's
-                splittedItems = match[0].split(',');
-                requireId = splittedItems.length - 4;
+                // not delivered by "Array()" -->
+                // first try: search for number followed by :
+                // second try: we need to count the number of comma's
+                matchNumber = match[0].match(REGEXP_CONST_NR);
+                if (matchNumber) {
+                    requireId = matchNumber[1];
+                }
+                else {
+                    splittedItems = match[0].split(',');
+                    requireId = splittedItems.length - 4;
+                }
             }
             content += '{\n';
                 content += '"componentId": '+fileWithoutExt+',\n';

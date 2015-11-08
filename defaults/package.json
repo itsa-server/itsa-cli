@@ -21,7 +21,7 @@
     "itsa-react-router": "^1.0.5",
     "itsa-react-fs-markdown": "^1.0.1",
     "itsa-client-controller": "^1.0.2",
-    "itsa-reflux-clientstorage": "^1.0.4",
+    "itsa-reflux-clientstorage": "^1.0.5",
     "react": "^0.13.3",
     "reflux": "^0.3.0",
     "useragent": "^2.1.7",
