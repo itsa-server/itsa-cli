@@ -1,12 +1,12 @@
 var gulp = require('gulp');
 var bump = require('gulp-bump');
 var fs = require('fs-extra');
-var getversion = require('../custom_modules/getversion');
+var getVersion = require('itsa-react-server-webpack-builder').getVersion;
 var SRC_DIR = './src/';
 var DEVELOPMENT_DIR = './development_server/';
 
 gulp.task('component:createdevversion', () => {
-    var versions = getversion(),
+    var versions = getVersion(),
         previousRelease = versions.developmentString,
         freeRelease = versions.nextProdVersion;
 

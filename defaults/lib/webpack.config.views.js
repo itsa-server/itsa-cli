@@ -1,7 +1,7 @@
 'use strict';
 
-const getversion = require('./custom_modules/getversion'),
-      version = getversion(),
+const getVersion = require('itsa-react-server-webpack-builder').getVersion,
+      version = getVersion(),
       ExtractTextPlugin = require('extract-text-webpack-plugin'),
       webpack = require('webpack'),
       reactServerConfig = require('../src/'+version.developmentString+'/reactserver.config.json'),

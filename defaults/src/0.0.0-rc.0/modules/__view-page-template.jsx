@@ -1,13 +1,20 @@
 'use strict';
 
 var React = require('react'),
-      TransferedProperties = require('../../lib/transfered-properties');
+    TransferedProperties = require('itsa-react-server-webpack-builder/core-components/transfered-properties'),
+    NON_CLIENT_PROPS = {
+        '__itsacommonscript': true,
+        '__itsapagescript': true,
+        '__itsapagelinkcss': true,
+        '__itsapageinlinecss': true
+    };
 
 var Page = React.createClass({
     render: function() {
-        var commonscript = this.props.__itsacommonscript && <script src={this.props.__itsacommonscript} />,
+        var that = this,
+            commonscript = this.props.__itsacommonscript && <script src={this.props.__itsacommonscript} />,
             pagescript = this.props.__itsapagescript && <script src={this.props.__itsapagescript} />,
-            googleAnalyticsInit, gaInit, ga, pagecss, stringifiedProps, gaInitScript, googleAnalyticsGa;
+            googleAnalyticsInit, gaInit, ga, pagecss, gaInitScript, googleAnalyticsGa, keys, clientProps;
 
         if (this.props.__ga) {
             gaInitScript = '(function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){'+
@@ -27,7 +34,15 @@ var Page = React.createClass({
             pagecss = <style data-src="inline" type="text/css" dangerouslySetInnerHTML={this.props.__itsapageinlinecss} />;
         }
 
-        stringifiedProps = JSON.stringify(this.props);
+        // clone the props-oject, but leave some parts out:
+        // don't send the heavy script and css, they are not needed as props on the client:
+        clientProps = {};
+        keys = Object.keys(this.props);
+        keys.forEach(function(key) {
+            if (!NON_CLIENT_PROPS[key]) {
+                clientProps[key] = that.props[key];
+            }
+        });
 
         return (
             <html lang={this.props.__lang} data-page={this.props.__view} data-device={this.props.__device}>
@@ -40,8 +55,10 @@ var Page = React.createClass({
                 {googleAnalyticsInit}
             </head>
             <body>
-                {this.props.children}
-                <TransferedProperties stringifiedProps={stringifiedProps} />
+                <div id="#view-container">
+                    {this.props.children}
+                </div>
+                <TransferedProperties clientProps={clientProps} />
                 {commonscript}
                 {pagescript}
                 {googleAnalyticsGa}

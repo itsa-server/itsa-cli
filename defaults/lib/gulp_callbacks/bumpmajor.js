@@ -8,11 +8,11 @@ require('../gulp_components/webpack-apps');
 require('../gulp_components/webpack-views');
 require('./test');
 
-const getversion = require('../custom_modules/getversion'),
+const getVersion = require('itsa-react-server-webpack-builder').getVersion,
       runSequence = require('run-sequence');
 
 const cb = callback => {
-  const version = getversion(),
+  const version = getVersion(),
         nextDevVersion = version.getNextDevVersion('major'),
         freedVersion = version.nextProdVersion;
   runSequence(
