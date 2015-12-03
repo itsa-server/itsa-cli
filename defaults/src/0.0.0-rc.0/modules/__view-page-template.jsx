@@ -55,7 +55,7 @@ var Page = React.createClass({
                 {googleAnalyticsInit}
             </head>
             <body>
-                <div id="#view-container">
+                <div id="view-container">
                     {this.props.children}
                 </div>
                 <TransferedProperties clientProps={clientProps} />

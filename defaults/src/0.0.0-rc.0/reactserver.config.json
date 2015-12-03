@@ -16,6 +16,8 @@
     },
     "databases": {
         "db1": {
+            "host": "xxx.xxx.xxx.xxx",
+            "port": "3306",
             "database": "db1",
             "user": "my_username",
             "password": "my_password"

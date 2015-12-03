@@ -5,7 +5,7 @@
 var args = process.argv,
     action = args[2],
     createApp = require('./create_app'),
-    validApp = /[a-zA-Z]+/,
+    validApp = /^[\w.-]+$/,
     subaction;
 
 if (action==='create') {
