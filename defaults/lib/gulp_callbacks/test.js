@@ -2,10 +2,10 @@
 
 const gulp = require('gulp'),
       eslint = require('gulp-eslint'),
-      getversion = require('../custom_modules/getversion');
+      getVersion = require('itsa-react-server-webpack-builder').getVersion;
 
 const cb = () => {
-    const versions = getversion(),
+    const versions = getVersion(),
           developmentString = versions.developmentString,
           testdir = './src/'+developmentString+'/**/*.{js,jsx}';
       // patterns with the same form as gulp.src(patterns)

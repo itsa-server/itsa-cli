@@ -1,7 +1,7 @@
 'use strict';
 
 const gulp = require('gulp'),
-      runWebpack = require('../custom_modules/run-webpack.js');
+      runWebpack = require('itsa-react-server-webpack-builder').runWebpack;
 
 gulp.task('component:dev-webpack-apps', (callback) => {
     runWebpack(false, 'apps', callback);

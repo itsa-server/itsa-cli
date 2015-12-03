@@ -22,7 +22,7 @@ const cb = callback => {
           console.log('=============================================================================================================================');
           callback(error);
       } else {
-          devServer = require('../custom_modules/run-development-server');
+          devServer = require('itsa-react-server-webpack-builder').runDevelopmentServer;
           devServer('tablet');
       }
     });

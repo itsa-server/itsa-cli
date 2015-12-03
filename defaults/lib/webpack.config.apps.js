@@ -1,7 +1,7 @@
 'use strict';
 
-const getversion = require('./custom_modules/getversion'),
-      version = getversion(),
+const getVersion = require('itsa-react-server-webpack-builder').getVersion,
+      version = getVersion(),
       webpack = require('webpack'),
       // cssStrip = require('./custom_modules/css-strip-loader'),
       reactServerConfig = require('../src/'+version.developmentString+'/reactserver.config.json'),
@@ -54,7 +54,7 @@ const configFn = (production/*, justComponent*/) => {
         module: {
             loaders: [
                 { test: /\.jsx?$/, loader: 'babel-loader' },
-                { test: /\.s?css$/, loader: cwd+'/lib/custom_modules/css-strip-loader' },
+                { test: /\.s?css$/, loader: 'itsa-react-server-webpack-builder/lib/css-strip-loader' },
                 { test: /\.(jpe?g|png|gif)$/, loader: 'url-loader'+(urlLoaderLimit ? '?limit='+urlLoaderLimit : '')}, // inline base64 URLs for <=8k images, direct URLs for the rest
                 { test: /\.json?$/, loader: 'json-loader' },
                 { test: /\.(otf|eot|svg|ttf|woff)/, loader: 'url-loader'+(urlLoaderLimit ? '?limit='+urlLoaderLimit : '')} // inline base64 URLs for <=8k images, direct URLs for the rest

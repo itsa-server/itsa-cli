@@ -2,11 +2,11 @@
 
 require('../gulp_components/prerelease');
 
-const getversion = require('../custom_modules/getversion'),
+const getVersion = require('itsa-react-server-webpack-builder').getVersion,
       runSequence = require('run-sequence');
 
 const cb = callback => {
-  const nextDevVersion = getversion().getNextDevVersion('prerelease');
+  const nextDevVersion = getVersion().getNextDevVersion('prerelease');
   runSequence(
     'component:prerelease',
     function (error) {
