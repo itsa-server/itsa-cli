@@ -1,6 +1,6 @@
 {
   "name": "itsa-cli",
-  "version": "2.3.9",
+  "version": "15.7.19",
   "description": "Command line interface for itsa-server",
   "bin": {
     "itsa": "./bin/itsa.js"
@@ -30,18 +30,20 @@
     "node": "*"
   },
   "dependencies": {
-    "fs-extra": "^0.24.0"
+    "fs-extra": "^0.26.7",
+    "path": "^0.12.7"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
-    "istanbul": "^0.3.0",
-    "jshint": "^2.5.5",
-    "mocha": "^1.21.4"
+    "chai-equal-jsx": "^1.0.11",
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.3",
+    "eslint": "^2.7.0",
+    "mocha": "^2.4.5"
   },
   "scripts": {
-    "pretest": "jshint  ./lib/*.js",
+    "pretest": "eslint  ./lib/*.js",
     "test": "mocha tests/*.js  && istanbul cover $(which _mocha) -- tests/*.js",
-    "lint": "jshint ./lib/*.js"
+    "lint": "eslint ./lib/*.js"
   },
   "homepage": "http://itsa.github.io",
   "maintainers": [

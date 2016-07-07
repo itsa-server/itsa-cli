@@ -1,17 +1,17 @@
 'use strict';
 
-require('../gulp_components/createdevversion');
+require('../gulp_components/createdevserver');
 require('../gulp_components/dev-webpack-apps');
 require('../gulp_components/dev-webpack-views');
-require('./test');
+require('./lint');
 
 const runSequence = require('run-sequence');
 
 const cb = callback => {
   let devServer;
   runSequence(
-    'test',
-    'component:createdevversion',
+    'lint',
+    'component:createdevserver',
     'component:dev-webpack-views',
     'component:dev-webpack-apps',
     function (error) {

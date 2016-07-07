@@ -3,7 +3,8 @@
 'use strict';
 
 var fs = require('fs-extra'),
-    DEFAULTS_DIR = '/usr/local/lib/node_modules/itsa-cli/defaults',
+    Path = require('path'),
+    DEFAULTS_DIR = Path.join(__dirname, '../defaults'),
     exec = require('child_process').exec,
     createApp, child;
 
