@@ -2,16 +2,19 @@
 
 'use strict';
 
-var args = process.argv,
-    action = args[2],
-    createApp = require('./create_app'),
+const args = process.argv,
+    action = args[2] || '',
+    actionSplitted = action.split('@'),
+    createApp = require('./create-app'),
     validApp = /^[\w.-]+$/,
-    subaction;
-
-if (action==='create') {
     subaction = args[3];
+
+let template;
+
+if (actionSplitted[0]==='create') {
+    template = actionSplitted[1] || 'basic';
     if (subaction && validApp.test(subaction)) {
-        createApp(subaction);
+        createApp(template, subaction);
     }
     else {
         console.log('itsacli --> invalid arguments');

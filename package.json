@@ -1,7 +1,7 @@
 {
   "name": "itsa-cli",
-  "version": "15.7.20",
-  "description": "Command line interface for itsa-server",
+  "version": "16.2.10",
+  "description": "Command line interface for itsa-react-server",
   "bin": {
     "itsa": "./bin/itsa.js"
   },
@@ -23,28 +23,22 @@
     "itsacli",
     "cli",
     "itsasbreuk",
-    "itsa-server",
+    "itsa-react-server",
+    "react",
+    "framework",
     "server"
   ],
   "engines": {
-    "node": "*"
+    "node": ">=8"
   },
   "dependencies": {
-    "fs-extra": "^0.26.7",
-    "path": "^0.12.7"
+    "fs-extra": "^3.0.1",
+    "password-creator": "^1.0.1"
   },
   "devDependencies": {
-    "chai-equal-jsx": "^1.0.11",
-    "chai": "^3.5.0",
-    "istanbul": "^0.4.3",
-    "eslint": "^2.7.0",
-    "mocha": "^2.4.5"
+    "jest": "^20.0.4"
   },
-  "scripts": {
-    "pretest": "eslint  ./lib/*.js",
-    "test": "mocha tests/*.js  && istanbul cover $(which _mocha) -- tests/*.js",
-    "lint": "eslint ./lib/*.js"
-  },
+  "scripts": {},
   "homepage": "http://itsa.github.io",
   "maintainers": [
     {

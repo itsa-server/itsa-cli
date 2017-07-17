@@ -1,0 +1,11 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <g>
+            <polygon fill="#F7C7C5" stroke="#EE3E36" stroke-width="4px" points="330.7,6 87.9,6 87.9,506 449.2,506 449.2,122.8"/>
+            <polygon fill="#EE3E36" points="330.7,6 449.2,122.8 330.7,122.8"/>
+            <rect fill="#EE3E36" height="156.1" width="329" x="62.8" y="298.8"/>
+            <polygon fill="#840903" points="62.8,454.9 87.9,476.1 87.9,454.9"/>
+        </g>
+        <text x="105" y="420" fill="white" style="font-family: Lato, Helvetica, Verdana; font-size: 122px; font-weight: bold; letter-spacing: 2;">pdf</text>
+    </g>
+</svg>

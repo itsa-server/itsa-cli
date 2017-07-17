@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <defs>
+    <clipPath id="cut-off-bottom">
+      <rect x="0" y="0" width="22" height="11" />
+    </clipPath>
+  </defs>
+  <circle cx="11" cy="11" r="10" fill="#162E4D" stroke="#D0D0D0" stroke-width="2"></circle>
+  <circle cx="11" cy="11" r="10" fill="#69B1E2" stroke="#D0D0D0" stroke-width="2" clip-path="url(#cut-off-bottom)" />
+</svg>
