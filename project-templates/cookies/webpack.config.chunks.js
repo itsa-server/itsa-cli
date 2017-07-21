@@ -103,7 +103,7 @@ let webPackConfig = {
             // uncomment next test is you "require" svg files that need variabel fill-colors by using `svg-fill-loader`
             /*
             {
-                test: /\.svg\?fill=/,
+                test: /\.svg/,
                 use: [
                     {
                         loader: 'url-loader',

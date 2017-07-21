@@ -43,6 +43,18 @@ let webPackConfig = {
                     }
                 }
             },
+            // uncomment next test is you "require" image files:
+            /*
+            {
+                test: /\.(jpe?g|png|gif)$/,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        limit: urlLoaderLimit // inline base64 URLs for <=urlLoaderLimit bytes images, direct URLs for the rest
+                    }
+                }
+            },
+            */
             // uncomment next test is you "require" svg files:
             /*
             {
@@ -67,7 +79,7 @@ let webPackConfig = {
             // uncomment next test is you "require" svg files that need variabel fill-colors by using `svg-fill-loader`
             /*
             {
-                test: /\.svg\?fill=/,
+                test: /\.svg/,
                 use: [
                     {
                         loader: 'url-loader',

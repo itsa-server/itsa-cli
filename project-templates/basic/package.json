@@ -27,9 +27,15 @@
     "test": "NODE_ENV=test mocha --reporter spec --bail tests/* --recursive",
     "test-cov": "NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot tests/* --recursive"
   },
+  "directories": {
+    "src": "./src",
+    "build": "./build",
+    "externals": "./externals",
+    "tests": "./tests"
+  },
   "dependencies": {
     "hapi": "^16.4.0",
-    "itsa-react-server": "^16.2.7",
+    "itsa-react-server": "^16.2.12",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
