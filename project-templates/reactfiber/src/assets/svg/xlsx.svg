@@ -1,0 +1,11 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <g>
+            <polygon fill="#C6E8D3" stroke="#1B733D" stroke-width="4px" points="330.7,6 87.9,6 87.9,506 449.2,506 449.2,122.8"/>
+            <polygon fill="#1B733D" points="330.7,6 449.2,122.8 330.7,122.8"/>
+            <rect fill="#1B733D" height="156.1" width="329" x="62.8" y="298.8"/>
+            <polygon fill="#02471D" points="62.8,454.9 87.9,476.1 87.9,454.9"/>
+        </g>
+        <text x="105" y="420" fill="white" style="font-family: Lato, Helvetica, Verdana; font-size: 122px; font-weight: bold; letter-spacing: 2;">xlsx</text>
+    </g>
+</svg>

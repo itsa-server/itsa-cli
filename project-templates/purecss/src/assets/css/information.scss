@@ -1,0 +1,16 @@
+:root {
+    --font-color: #900;
+}
+
+a {
+    color: #F0F;
+}
+
+input {
+
+    /*
+     some comment for information.scss
+    */
+    width: 100px;
+    color: var(--font-color);
+}

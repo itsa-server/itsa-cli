@@ -1,0 +1,46 @@
+{
+  "name": "your-app",
+  "version": "0.0.1",
+  "description": "Your application",
+  "private": true,
+  "license": "Proprietary",
+  "author": [
+    {
+      "name": "your_name",
+      "email": "someone@somedomain.com"
+    }
+  ],
+  "keywords": [],
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "build": "node ./node_modules/itsa-react-server/lib/build && gulp uglify",
+    "start": "npm run build && npm run cdn && node server",
+    "cdn": "node ./node_modules/itsa-react-server/lib/cdn-deploy",
+    "watch": "node ./node_modules/itsa-react-server/lib/watch",
+    "watch-sourcemaps": "node ./node_modules/itsa-react-server/lib/watch-sourcemaps",
+    "lint": "eslint -c eslint-config ./src/*.{js,jsx} ./src/**/*.{js,jsx}",
+    "server": "node server",
+    "api": "yuidoc ./src -q -c ./yuidoc.json",
+    "no-test": "NODE_ENV=test",
+    "test": "NODE_ENV=test mocha --reporter spec --bail tests/* --recursive",
+    "test-cov": "NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot tests/* --recursive"
+  },
+  "directories": {
+    "src": "./src",
+    "build": "./build",
+    "externals": "./externals",
+    "tests": "./tests"
+  },
+  "dependencies": {
+    "hapi": "^16.4.0",
+    "itsa-react-server": "^16.2.12",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4"
+  }
+}

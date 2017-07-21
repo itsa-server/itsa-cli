@@ -9,24 +9,6 @@ Step 1: install itsa-cli globally:
 npm install -g itsa-cli
 ```
 
-Step 2: install Gulp globally:
-
-```
-npm install -g gulp
-```
-
-Step 3: If you want linting in your project, you need to install es-lint globally:
-
-```
-npm install -g eslint
-```
-
-Step 4: Because we also need to lint React syntax, you need to install eslint-plugin-react globally:
-
-```
-npm install -g eslint-plugin-react
-```
-
 ## Creating applications
 
 Once you have all these packages, you can create a new web-application like this:
@@ -37,17 +19,17 @@ Once you have all these packages, you can create a new web-application like this
 itsa create appname
 ```
 
-`appname` will become a new folder with all approriate files.
+`appname` will become a new folder with all appropriate files.
 
 ### Check the new application
 
 Goto the created folder and run:
 
 ```js
-gulp devserver
+npm run watch
 ```
 
-When gulp has finished, the application will be running at http://localhost:5001
+As soon as the message **Server running development at port: 3001** appears, you can open a browser and visit **http://localhost:3001**. The `Hello World!` app should come up.
 
 See http://itsaserver.io for the complete documentation and usage.
 

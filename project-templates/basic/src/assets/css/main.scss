@@ -1,0 +1,24 @@
+$font-color: #333;
+
+body {
+    font-size: 120%;
+
+    /*
+     set the font-family equal to pure-grid
+    */
+    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+    color: $font-color;
+    padding: 2em 3em;
+
+    &[data-zoom="1"] {
+        font-size: 100%;
+    }
+
+    &[data-zoom="3"] {
+        font-size: 150%;
+    }
+}
